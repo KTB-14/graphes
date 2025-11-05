@@ -8,5 +8,7 @@ jobs:
       run: sudo apt install graphviz -y
     - name: Check out repository code
       uses: actions/checkout@v3
+    - name: Execution rights for run
+      run: chmod +x TP_Graphviz/run1.sh
     - name: Lancement graphviz
       run: ./TP_Graphviz/run1.sh g1
