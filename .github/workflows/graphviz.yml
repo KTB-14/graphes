@@ -12,9 +12,12 @@ jobs:
 
     - name: Execution rights for run
       run: chmod +x TP_Graphviz/run1.sh
-      
-    - name: Lancement graphviz
+
+    - name: Lancement graphviz (run1)
       run: ./TP_Graphviz/run1.sh g1
+
+    - name: Lancement graphviz (run2)
+      run: ./TP_Graphviz/run2.sh
 
     - name: Upload des images générées
       uses: actions/upload-artifact@v4
