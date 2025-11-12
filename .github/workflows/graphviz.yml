@@ -10,11 +10,14 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v3
 
-    - name: Execution rights for run
+    - name: Execution rights for run1
       run: chmod +x TP_Graphviz/run1.sh
 
     - name: Lancement graphviz (run1)
       run: ./TP_Graphviz/run1.sh g1
+
+    - name: Execution rights for run2
+      run: chmod +x TP_Graphviz/run2.sh
 
     - name: Lancement graphviz (run2)
       run: ./TP_Graphviz/run2.sh
