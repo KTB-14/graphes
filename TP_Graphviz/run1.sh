@@ -2,5 +2,11 @@
 
 # tool=dot
 tool=neato
-$tool -Tpng TP_Graphviz/$1.dot >TP_Graphviz/images_générées/$1.png
-$tool -Tsvg TP_Graphviz/$1.dot >TP_Graphviz/images_générées/$1.svg
+
+cd TP_Graphviz
+
+mkdir -p images_générées
+mkdir -p images_générées/images_run1
+
+$tool -Tpng $1.dot >images_générées/images_run1/$1.png
+$tool -Tsvg $1.dot >images_générées/images_run1/$1.svg
