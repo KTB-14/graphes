@@ -10,20 +10,25 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v3
 
-    - name: Execution rights for run1
-      run: chmod +x TP_Graphviz/run1.sh
+    - name: Nettoyage et préparation du dossier de sortie
+      run: |
+        rm -rf TP_Graphviz/générées
+        mkdir -p TP_Graphviz/générées
+
+    - name: Execution rights des fichiers run
+      run: chmod +x TP_Graphviz/run1.sh TP_Graphviz/run2.sh
 
     - name: Lancement graphviz (run1)
       run: ./TP_Graphviz/run1.sh g1
 
-    - name: Execution rights for run2
-      run: chmod +x TP_Graphviz/run2.sh
-
     - name: Lancement graphviz (run2)
       run: ./TP_Graphviz/run2.sh
 
-    - name: Upload des images générées
+    - name: Upload complet (SVG + PNG + JSON)
       uses: actions/upload-artifact@v4
       with:
         name: graphes_generes
-        path: TP_Graphviz/images_générées/
+        path: |
+          TP_Graphviz/générées/**/*.svg
+          TP_Graphviz/générées/**/*.png
+          TP_Graphviz/générées/**/*.json
