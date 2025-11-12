@@ -27,4 +27,4 @@ curl -L \
   --output TP_Graphviz/générées/artifact.zip
 
 
-unzip -o TP_Graphviz/générées/artifact.zip
+unzip -o TP_Graphviz/générées/artifact.zip -d TP_Graphviz/générées/
