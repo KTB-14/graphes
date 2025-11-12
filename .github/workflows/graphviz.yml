@@ -15,3 +15,9 @@ jobs:
       
     - name: Lancement graphviz
       run: ./TP_Graphviz/run1.sh g1
+
+    - name: Upload des images générées
+      uses: actions/upload-artifact@v4
+      with:
+        name: graphes_generes
+        path: TP_Graphviz/images_générées/
